@@ -1,0 +1,8 @@
+<%= notice %>
+<h1>ほーむ</h1>
+<% @tweets.each do |tweet| %>
+  <ul>
+    <li><%= tweet.content %></li>
+  </ul>
+<% end %>
+<%= link_to 'ついーとする', new_tweet_path %>
