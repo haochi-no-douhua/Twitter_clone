@@ -1,0 +1,7 @@
+<h3>ほんとについーとする？</h3>
+<%= form_with(model: @tweet, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p><%= @tweet.content %></p>
+  <%= form.submit "ついーとする" %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>

@@ -1,8 +1,12 @@
 <%= notice %>
 <h1>ほーむ</h1>
+<table>
 <% @tweets.each do |tweet| %>
-  <ul>
-    <li><%= tweet.content %></li>
-  </ul>
+  <tr>
+    <td><%= tweet.content %></td>
+    <td><%= link_to 'へんしゅう', edit_tweet_path(tweet.id) %></td>
+    <td><%= link_to 'けす', tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けしていいですか？' } %></td>
+  </tr>
 <% end %>
+</table>
 <%= link_to 'ついーとする', new_tweet_path %>
