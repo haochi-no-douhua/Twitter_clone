@@ -10,14 +10,20 @@
   </head>
 
   <body>
+
     <header>
-      
+      <%= link_to tweets_path do %>
+        <div class="yuruitter_icon">
+          <%= image_tag 'yuruitter_icon.png' %>
+        </div>
+      <% end %>
     </header>
 
-    <%= yield %>
+      <%= yield %>
 
     <footer>
       <p>© 1995-2020 Haochi No Douhua, inc.</p>
     </footer>
+
   </body>
 </html>

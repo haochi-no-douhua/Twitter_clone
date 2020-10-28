@@ -1,10 +1,15 @@
 <div class="container">
+
   <% if notice %>
     <div class="alert alert-success"><%= notice %></div>
   <% else %>
   <% end %>
-  <h1>ほーむ</h1>
-    <table>
+
+  <div class="row">
+    <%= link_to 'ついーとする', new_tweet_path %>
+  </div>
+
+  <table>
      <% @tweets.each do |tweet| %>
       <div class="well">
           <h3><%= tweet.content %></h3>
@@ -17,6 +22,4 @@
       </div>
      <% end %>
    </table>
-  <%= link_to 'ついーとする', new_tweet_path %>
-
 </div>

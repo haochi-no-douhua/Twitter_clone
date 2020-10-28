@@ -2,7 +2,11 @@
 header {
   width: 100%;
   background-color: pink;
-  height: 50px;
+  height: 150px;
+}
+
+header .yuruitter_icon {
+  padding: 30px;
 }
 
 footer {
@@ -16,4 +20,14 @@ footer {
 
 body {
   background-color: pink;
+}
+
+.jumbotron {
+  background-image: url("hukidashi.png");
+  background-size: 720px 135px;
+  background-position: center;
+}
+
+.form {
+  padding-left: 100px;
 }
