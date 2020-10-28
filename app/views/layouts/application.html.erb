@@ -12,11 +12,24 @@
   <body>
 
     <header>
-      <%= link_to tweets_path do %>
-        <div class="yuruitter_icon">
-          <%= image_tag 'yuruitter_icon.png' %>
+      <div class="yuruitter_header row">
+        <div class="yuruitter_icon col-md-offset-2">
+          <%= link_to new_tweet_path do %>
+            <div class="yuruitter_icon_img">
+              <%= image_tag 'yuruitter_icon.png' %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+
+        <div class="yuruitter_title">
+          <%= link_to tweets_path do %>
+            <div class="yuruitter_title_img">
+              <%= image_tag 'yuruitter_title.png' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </header>
 
       <%= yield %>

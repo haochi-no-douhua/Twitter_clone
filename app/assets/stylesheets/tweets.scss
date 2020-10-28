@@ -5,8 +5,23 @@ header {
   height: 150px;
 }
 
-header .yuruitter_icon {
+.yuruitter_icon {
+  float: left;
+}
+
+.yuruitter_title {
+  float: left;
+}
+
+header .yuruitter_icon_img {
+  height: 97px;
+  width: 158px;
   padding: 30px;
+}
+
+header .yuruitter_title_img {
+  height: 97px;
+  width: 300px;
 }
 
 footer {

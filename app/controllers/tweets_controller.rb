@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
       render :new
     else
       if @tweet.save
-        redirect_to tweets_path, notice: "ついーとしました"
+        redirect_to tweets_path, notice: "つい〜としたよ"
       else
         render :new
       end
@@ -27,12 +27,12 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet.destroy
-    redirect_to tweets_path, notice: "けしました"
+    redirect_to tweets_path, notice: "けしたよ"
   end
 
   def update
     if @tweet.update(tweet_params)
-       redirect_to tweets_path, notice: "へんしゅうしました"
+       redirect_to tweets_path, notice: "なおしたよ"
     else
       render :edit
     end
