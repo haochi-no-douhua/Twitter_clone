@@ -1,12 +1,22 @@
-<%= notice %>
-<h1>ほーむ</h1>
-<table>
-<% @tweets.each do |tweet| %>
-  <tr>
-    <td><%= tweet.content %></td>
-    <td><%= link_to 'へんしゅう', edit_tweet_path(tweet.id) %></td>
-    <td><%= link_to 'けす', tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けしていいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
-<%= link_to 'ついーとする', new_tweet_path %>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% else %>
+  <% end %>
+  <h1>ほーむ</h1>
+    <table>
+     <% @tweets.each do |tweet| %>
+      <div class="well">
+          <h3><%= tweet.content %></h3>
+          <p>
+            <%= link_to edit_tweet_path(tweet.id), class: 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <% end %>
+            <%= link_to 'けす', tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けしていいですか？' } %>
+          </p>
+      </div>
+     <% end %>
+   </table>
+  <%= link_to 'ついーとする', new_tweet_path %>
+
+</div>
