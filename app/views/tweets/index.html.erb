@@ -1,23 +1,28 @@
-<div class="container">
-
   <% if notice %>
     <div class="alert alert-success"><%= notice %></div>
   <% else %>
   <% end %>
 
-  <table>
-     <% @tweets.each do |tweet| %>
-      <div class="well">
-          <h3><%= tweet.content %></h3>
-          <p>
-            <%= link_to edit_tweet_path(tweet.id) do %>
-              <%= image_tag 'edit_icon.png' %>
-            <% end %>
-            <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
-              <%= image_tag 'destroy_icon.png' %>
-            <% end %>
-          </p>
-      </div>
-     <% end %>
-   </table>
+<div class="container">
+
+  <div class="tweet_table_and_article row">
+    <div class="tweet_table col-dm-8">
+       <% @tweets.each do |tweet| %>
+        <div class="well col-md-offset-2 col-md-8 ">
+            <h3><%= tweet.content %></h3>
+            <p>
+              <%= link_to edit_tweet_path(tweet.id) do %>
+                <%= image_tag 'edit_icon.png' %>
+              <% end %>
+              <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
+                <%= image_tag 'destroy_icon.png' %>
+              <% end %>
+            </p>
+        </div>
+       <% end %>
+    </div>
+    <article class="">
+    </article>
+  </div>
+
 </div>
