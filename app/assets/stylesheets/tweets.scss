@@ -60,7 +60,7 @@ body {
 
 .tweet_confirm_form {
   padding-left: 300px;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .form {
@@ -76,4 +76,13 @@ body {
   width: 300px;
   height: 50px;
   resize: none;
+}
+
+.tweet_confirm_form p {
+  word-break: break-all;
+  width: 300px;
+}
+
+.submit_btn {
+
 }
