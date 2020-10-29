@@ -4,7 +4,7 @@
     <title>TwitterClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,7 +13,7 @@
 
     <header>
       <div class="yuruitter_header row">
-        <div class="yuruitter_icon col-md-offset-2">
+        <div class="yuruitter_icon col-xs-offset-2">
           <%= link_to new_tweet_path do %>
             <div class="yuruitter_icon_img">
               <%= image_tag 'yuruitter_icon.png' %>

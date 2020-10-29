@@ -4,6 +4,7 @@
     <%= form_with(model: @tweet, local: true) do |form| %>
       <%= form.hidden_field :content %>
       <p><%= @tweet.content %></p>
+        <%# word-break: break-all;する %>
       <%= form.submit "する", :class=>"btn"%>
       <%= form.submit "もどる", :class=>"btn", name: 'back' %>
     <% end %>

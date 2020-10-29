@@ -6,9 +6,10 @@
 <div class="container">
 
   <div class="tweet_table_and_article row">
-    <div class="tweet_table col-dm-8">
+    <div class="tweet_table col-sm-8">
+      <div class="row">
        <% @tweets.each do |tweet| %>
-        <div class="well col-md-offset-2 col-md-8 ">
+        <div class="well">
             <h3><%= tweet.content %></h3>
             <p>
               <%= link_to edit_tweet_path(tweet.id) do %>
@@ -20,8 +21,10 @@
             </p>
         </div>
        <% end %>
+     </div>
     </div>
-    <article class="">
+    <article class="col-sm-2">
+      あーてぃくるです
     </article>
   </div>
 
