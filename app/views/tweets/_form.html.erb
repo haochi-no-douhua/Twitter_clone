@@ -1,8 +1,8 @@
 <div class="form">
   <%= form_with(model: @tweet, local: true, url: choose_new_or_edit ) do |form| %>
       <div class="tweet_content row">
-          <%= form.text_field :content %>
-          <%= form.submit %>
+        <%= form.text_area :content %>
+        <%= form.submit %>
       </div>
   <% end %>
 </div>
