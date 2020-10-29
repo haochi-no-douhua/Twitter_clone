@@ -5,31 +5,31 @@
   <script>
     $(".alert-success" ).fadeOut(3000);
   </script>
+<div class="wrapper">
+  <div class="container">
 
-<div class="container">
+    <div class="tweet_table_and_article row">
+      <div class="tweet_table col-sm-8">
+        <div class="row">
+         <% @tweets.each do |tweet| %>
+          <div class="well col-sm-offset-1">
+              <h3><%= tweet.content %></h3>
+              <p>
+                <%= link_to edit_tweet_path(tweet.id) do %>
+                  <%= image_tag 'edit_icon.png' %>
+                <% end %>
+                <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
+                  <%= image_tag 'destroy_icon.png' %>
+                <% end %>
+              </p>
+          </div>
+         <% end %>
+       </div>
+      </div>
 
-  <div class="tweet_table_and_article row">
-    <div class="tweet_table col-sm-8">
-      <div class="row">
-       <% @tweets.each do |tweet| %>
-        <div class="well col-sm-offset-1">
-            <h3><%= tweet.content %></h3>
-            <p>
-              <%= link_to edit_tweet_path(tweet.id) do %>
-                <%= image_tag 'edit_icon.png' %>
-              <% end %>
-              <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
-                <%= image_tag 'destroy_icon.png' %>
-              <% end %>
-            </p>
-        </div>
-       <% end %>
-     </div>
+      <article class="col-sm-offset-1 col-sm-2">
+        あーてぃくるです
+      </article>
     </div>
-
-    <article class="col-sm-offset-1 col-sm-2">
-      あーてぃくるです
-    </article>
   </div>
-
 </div>

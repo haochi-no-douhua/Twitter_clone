@@ -1,3 +1,4 @@
+<div class="wrapper">
   <% if @tweet.errors.any? %>
       <div id="error_explanation">
         <% @tweet.errors.full_messages.each do |msg| %>
@@ -9,6 +10,7 @@
     $(".alert-danger" ).fadeOut(3000);
   </script>
 
-    <div class="tweet_form">
-        <%= render 'form' %>
-    </div>
+  <div class="tweet_form">
+    <%= render 'form' %>
+  </div>
+</div>
