@@ -26,7 +26,7 @@ header .yuruitter_title_img {
 
 footer {
   width: 100%;
-  background-color: pink;
+  background-color: #F2DEDE;
   height: 50px;
   text-align: center;
   color: white;
@@ -99,4 +99,9 @@ body {
 .background img {
   width: 90%;
   height: 70%;
+}
+
+.well h3 {
+  word-break: break-all;
+  width: 500px;
 }
