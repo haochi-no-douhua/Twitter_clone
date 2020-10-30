@@ -6,10 +6,14 @@
         <%= form.hidden_field :content %>
         <p><%= @tweet.content %></p>
         <div class="submit_btn">
-          <%= form.submit "する", :class=>"btn"%>
-          <%= form.submit "もどる", :class=>"btn", name: 'back' %>
+          <button class="btn btn-default">
+            <%= form.submit "する" %>
+          </button>
+          <button class="btn btn-default">
+           <%= form.submit "もどる", name: 'back' %>
+         </button>
         </div>
-      <% end %>
+     <% end %>
     </div>
   </div>
 </div>
