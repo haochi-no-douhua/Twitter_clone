@@ -27,8 +27,35 @@
        </div>
       </div>
 
-      <article class="col-sm-offset-1 col-sm-2">
-        あーてぃくるです
+      <article class="col-sm-2">
+        <div class="user">
+          <% if logged_in? %>
+            <div class="mypage_icon">
+             <%= link_to user_path(current_user.id) do %>
+              <%= image_tag 'mypage_icon.png' %>
+             <% end %>
+            </div>
+            <div class="logout_icon">
+             <%= link_to session_path(current_user.id),method: :delete do %>
+              <%= image_tag 'logout_icon.png' %>
+             <% end %>
+            </div>
+         <% else %>
+            <div class="shinki_icon">
+             <%= link_to new_user_path do %>
+              <%= image_tag 'shinki.png' %>
+             <% end %>
+            </div>
+            <div class="login_icon">
+             <%= link_to new_session_path do %>
+              <%= image_tag 'login_icon.png' %>
+             <% end %>
+          <% end %>
+        </div>
+
+
+
+
       </article>
     </div>
   </div>
