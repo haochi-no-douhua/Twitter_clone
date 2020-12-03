@@ -13,15 +13,30 @@
         <div class="row">
          <% @tweets.each do |tweet| %>
           <div class="well col-sm-offset-1 col-sm-10">
+              <h2><%= tweet.user.name %></h2>
               <h3><%= tweet.content %></h3>
               <p>
-                <%= link_to edit_tweet_path(tweet.id) do %>
-                  <%= image_tag 'edit_icon.png' %>
+                <% if tweet.user_id == current_user.id %>
+                  <%= link_to edit_tweet_path(tweet.id) do %>
+                    <%= image_tag 'edit_icon.png' %>
+                  <% end %>
                 <% end %>
-                <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
-                  <%= image_tag 'destroy_icon.png' %>
+                <% if tweet.user_id == current_user.id %>
+                  <%= link_to tweet_path(tweet.id), method: :delete ,  data: { confirm: 'けします？' } do %>
+                    <%= image_tag 'destroy_icon.png' %>
+                  <% end %>
                 <% end %>
               </p>
+              <div class="favorite">
+                <% unless tweet.user_id == current_user.id %>
+                  <% @favorite = current_user.favorites.find_by(tweet_id: tweet.id) %>
+                  <% if @favorite.present? %>
+                    <%= link_to 'あんふぁぼ' , favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+                  <% else %>
+                    <%= link_to 'ふぁぼ' , favorites_path(tweet_id: tweet.id), method: :post, class: 'btn btn-primary' %>
+                  <% end %>
+                <% end %>
+              </div>
           </div>
          <% end %>
        </div>

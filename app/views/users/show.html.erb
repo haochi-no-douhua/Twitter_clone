@@ -1,4 +1,9 @@
 <div class="wrapper">
   <h1><%= @user.name %>のページ</h1>
   <p>メールアドレス: <%= @user.email %></p>
-</div>
+
+  <h1>ふぁぼしたついーと</h1>
+    <% @tweet_favorites.each do |tweet| %>
+      <h2><ul><li><%= tweet.content %></li></ul></h2>
+    <% end %>
+  </div>

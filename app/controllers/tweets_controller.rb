@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user_id = current_user.id
     if params[:back]
       render :new
     else
@@ -41,6 +42,7 @@ class TweetsController < ApplicationController
 
   def confirm
     @tweet = Tweet.new(tweet_params)
+    @tweet.user_id = current_user.id
     render :new if @tweet.invalid?
   end
 

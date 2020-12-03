@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @tweet_favorites = @user.user_favorites
   end
 
   private
